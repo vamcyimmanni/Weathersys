@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kGO-nf-Lqh">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="3lU-i2-fUk">
+            <objects>
+                <viewController id="kGO-nf-Lqh" customClass="ViewController" customModule="Weathersys" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="S2o-gQ-eDr">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="backgroundGradient" translatesAutoresizingMaskIntoConstraints="NO" id="p8X-uZ-1B9">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="41" translatesAutoresizingMaskIntoConstraints="NO" id="4Uc-2a-Qe0">
+                                <rect key="frame" x="20" y="79" width="353" height="197"/>
+                                <subviews>
+                                    <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Enter city name" translatesAutoresizingMaskIntoConstraints="NO" id="QCW-6l-6op">
+                                        <rect key="frame" x="0.0" y="0.0" width="353" height="56"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="kGO-nf-Lqh" id="U6J-le-IJk"/>
+                                        </connections>
+                                    </searchBar>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6jU-pN-o8a">
+                                        <rect key="frame" x="0.0" y="97" width="353" height="100"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5RV-tT-hy4">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="5Rh-LN-EtF"/>
+                                                    <constraint firstAttribute="width" constant="100" id="qCA-Uv-0VZ"/>
+                                                </constraints>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="EpJ-8D-uKV">
+                                                <rect key="frame" x="100" y="0.0" width="253" height="100"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperature" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J2Q-Rj-weo">
+                                                        <rect key="frame" x="0.0" y="0.0" width="253" height="21.666666666666668"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="City" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PyU-Pr-DC7">
+                                                        <rect key="frame" x="0.0" y="21.666666666666654" width="253" height="56.666666666666657"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Condition" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="2VJ-6L-aaZ">
+                                                        <rect key="frame" x="0.0" y="78.333333333333343" width="253" height="21.666666666666671"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="k4O-f0-oUJ"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="QCW-6l-6op" firstAttribute="top" secondItem="4Uc-2a-Qe0" secondAttribute="top" id="coc-A6-bIM"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2lH-kw-PZs"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="4Uc-2a-Qe0" firstAttribute="top" secondItem="2lH-kw-PZs" secondAttribute="top" constant="20" id="Kut-FN-xYd"/>
+                            <constraint firstAttribute="bottom" secondItem="p8X-uZ-1B9" secondAttribute="bottom" id="MoP-cJ-Tqu"/>
+                            <constraint firstItem="p8X-uZ-1B9" firstAttribute="trailing" secondItem="2lH-kw-PZs" secondAttribute="trailing" id="YBx-dW-UtS"/>
+                            <constraint firstItem="4Uc-2a-Qe0" firstAttribute="leading" secondItem="2lH-kw-PZs" secondAttribute="leading" constant="20" id="Zrh-pi-U4Y"/>
+                            <constraint firstItem="p8X-uZ-1B9" firstAttribute="top" secondItem="S2o-gQ-eDr" secondAttribute="top" id="cv4-OW-Dwg"/>
+                            <constraint firstItem="p8X-uZ-1B9" firstAttribute="leading" secondItem="2lH-kw-PZs" secondAttribute="leading" id="fWe-A7-Q2Y"/>
+                            <constraint firstItem="4Uc-2a-Qe0" firstAttribute="trailing" secondItem="2lH-kw-PZs" secondAttribute="trailing" constant="-20" id="wck-da-J5l"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cityLabel" destination="PyU-Pr-DC7" id="Ek1-N4-bxG"/>
+                        <outlet property="conditionLabel" destination="2VJ-6L-aaZ" id="HxX-9i-Q01"/>
+                        <outlet property="searchBar" destination="QCW-6l-6op" id="u5R-rH-hvh"/>
+                        <outlet property="stackView" destination="4Uc-2a-Qe0" id="09A-w4-m8J"/>
+                        <outlet property="temperatureLabel" destination="J2Q-Rj-weo" id="I6N-4D-Vwz"/>
+                        <outlet property="weatherIconImageView" destination="5RV-tT-hy4" id="L1c-RT-tXt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fYl-OY-gno" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-721.37404580152668" y="-5.6338028169014089"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="backgroundGradient" width="360" height="852"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
