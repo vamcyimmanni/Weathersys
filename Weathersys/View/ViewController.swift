@@ -12,6 +12,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDe
     private let weatherViewModel = WeatherViewModel()
     private let locationManager = CLLocationManager()
     
+    weak var coordinator: MainCoordinator?
+    
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var weatherIconImageView: UIImageView!
@@ -27,7 +29,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDe
         setupLocationManager()
         loadLastSearchedCity()
     }
-
+    
     private func setupViews() {
         searchBar.delegate = self
         self.temperatureLabel.textColor = .black
@@ -35,7 +37,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDe
         self.conditionLabel.textColor = .black
         
         stackView.translatesAutoresizingMaskIntoConstraints = false
-
+        
     }
 
     private func setupBindings() {
@@ -49,7 +51,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDe
             if let iconURL = self.weatherViewModel.iconURL {
                 self.loadImage(from: iconURL)
             }
-
         }
     }
     
@@ -68,7 +69,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDe
             ImageCache.shared.setImage(image, forKey: cacheKey)
             
             DispatchQueue.main.async {
-                self.weatherIconImageView.image = image
+                self.weatherIconImageView?.image = image
             }
         }.resume()
     }
@@ -124,5 +125,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDe
 
         weatherViewModel.fetchWeather(cityName: cityName)
         searchBar.resignFirstResponder()
+    }
+    
+    @IBAction func didTapWeatherDetails(_ sender: Any) {
+    
+        if !weatherViewModel.city.isEmpty {
+            coordinator?.showWeatherDetail(for: weatherViewModel.city)
+        } else {
+            // Optionally, handle the case where the city is empty
+            print("City name is empty")
+        }
     }
 }

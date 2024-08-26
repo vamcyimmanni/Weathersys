@@ -11,7 +11,7 @@
         <!--View Controller-->
         <scene sceneID="3lU-i2-fUk">
             <objects>
-                <viewController id="kGO-nf-Lqh" customClass="ViewController" customModule="Weathersys" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="kGO-nf-Lqh" customClass="ViewController" customModule="Weathersys" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="S2o-gQ-eDr">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -72,6 +72,15 @@
                                     <constraint firstItem="QCW-6l-6op" firstAttribute="top" secondItem="4Uc-2a-Qe0" secondAttribute="top" id="coc-A6-bIM"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vOQ-BJ-b2o">
+                                <rect key="frame" x="124" y="409" width="145" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Weather Details"/>
+                                <connections>
+                                    <action selector="didTapWeatherDetails:" destination="kGO-nf-Lqh" eventType="touchUpInside" id="GFg-rh-nlR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2lH-kw-PZs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -86,12 +95,12 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="cityLabel" destination="PyU-Pr-DC7" id="Ek1-N4-bxG"/>
-                        <outlet property="conditionLabel" destination="2VJ-6L-aaZ" id="HxX-9i-Q01"/>
-                        <outlet property="searchBar" destination="QCW-6l-6op" id="u5R-rH-hvh"/>
-                        <outlet property="stackView" destination="4Uc-2a-Qe0" id="09A-w4-m8J"/>
-                        <outlet property="temperatureLabel" destination="J2Q-Rj-weo" id="I6N-4D-Vwz"/>
-                        <outlet property="weatherIconImageView" destination="5RV-tT-hy4" id="L1c-RT-tXt"/>
+                        <outlet property="cityLabel" destination="PyU-Pr-DC7" id="HVU-r9-Ms3"/>
+                        <outlet property="conditionLabel" destination="2VJ-6L-aaZ" id="Gkq-yb-bxD"/>
+                        <outlet property="searchBar" destination="QCW-6l-6op" id="9tq-JT-fVc"/>
+                        <outlet property="stackView" destination="4Uc-2a-Qe0" id="nOe-fk-pvU"/>
+                        <outlet property="temperatureLabel" destination="J2Q-Rj-weo" id="4h5-fJ-OaC"/>
+                        <outlet property="weatherIconImageView" destination="5RV-tT-hy4" id="moq-UR-oUW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fYl-OY-gno" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
